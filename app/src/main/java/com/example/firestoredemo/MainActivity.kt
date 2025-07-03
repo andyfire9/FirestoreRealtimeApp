@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Modify this snippet if you want to change the database and data table.
         db = FirebaseFirestore.getInstance()
 
         db.collection("Gun").document("WentOff")

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "102459642054",
-    "project_id": "waterguntest",
-    "storage_bucket": "waterguntest.firebasestorage.app"
+    "project_number": "324388349178",
+    "project_id": "cat-discipline",
+    "storage_bucket": "cat-discipline.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:102459642054:android:f8c8cfa2aec1dbd9a447c7",
+        "mobilesdk_app_id": "1:324388349178:android:233ba96bc11df644c41543",
         "android_client_info": {
           "package_name": "com.example.firestoredemo"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCVsWkk2kzon1hZEqFCa5HwJvbVs9onATg"
+          "current_key": "AIzaSyBrrfcgwPzZV4bbJ9iKk37m0l_xl0reNrc"
         }
       ],
       "services": {

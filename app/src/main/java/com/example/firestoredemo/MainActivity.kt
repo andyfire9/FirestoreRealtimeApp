@@ -21,23 +21,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Modify this snippet if you want to change the database and data table.
+        // ✅ Use your new Firestore collection "cat_discipline_logs"
         db = FirebaseFirestore.getInstance()
 
-        db.collection("Gun").document("WentOff")
-            .addSnapshotListener { snapshot, e ->
+        db.collection("cat_discipline_logs")
+            .addSnapshotListener { snapshots, e ->
                 if (e != null) {
                     showError("Error: ${e.message}")
                     return@addSnapshotListener
                 }
 
-                if (snapshot != null && snapshot.exists()) {
-                    val data = snapshot.data
-                    if (data != null) {
-                        renderCells(data)
+                if (snapshots != null && !snapshots.isEmpty) {
+                    val combinedData = mutableMapOf<String, Any>()
+                    for (document in snapshots) {
+                        // Merge all fields from each document
+                        combinedData.putAll(document.data)
                     }
+                    renderCells(combinedData)
                 } else {
-                    showError("Document does not exist")
+                    showError("No data found in cat_discipline_logs")
                 }
             }
     }
